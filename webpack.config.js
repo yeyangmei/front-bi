@@ -1,6 +1,8 @@
 /**
  * Created by yeyangmei on 16/11/10.
  */
+const UgPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+
 module.exports = {
   entry: './src/index',
 
@@ -36,5 +38,9 @@ module.exports = {
       jquery: 'jQuery',
     }
   ],
-  plugins: []
+  plugins: [
+    new UgPlugin({
+      minimize: true,
+    })
+  ]
 };
