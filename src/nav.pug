@@ -5,7 +5,7 @@ ul(class=styles.sup)
     each firstLevel, index in menu
         li(class=styles.sup_li)
             em: img(src= firstLevel.img_small)
-            span= index
+            span( class=styles.firstlevel)= index
             ul(class=styles.sub)
                 each subLevel in firstLevel.branch
                     li(class=styles.sub_li)

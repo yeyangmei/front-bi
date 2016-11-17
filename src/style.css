@@ -7,7 +7,7 @@
     width:60px;
 
 }
-:local(.sup_small .sup_li span) {
+:local(.sup_small .firstlevel) {
     opacity:0;
 }
 
