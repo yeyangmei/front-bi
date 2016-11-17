@@ -78,7 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Created by yeyangmei on 16/11/11.
 	 */
 	var defaultOptions = {
-	  width: 220
+	  //width: 220,
 	};
 
 	function getClassName(ctx, width) {
@@ -93,8 +93,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return opt > 0 ? $this.next('.' + _style2.default.arrow).removeClass(_style2.default.arrow_blue) : $this.find('.' + _style2.default.arrow).removeClass(_style2.default.arrow_blue);
 	}
 
-	_jquery2.default.fn.biNav = function (data) {
-	  var userOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	_jquery2.default.fn.biNav = function (data, selector) {
+	  var userOption = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
 	  var option = (0, _objectAssign2.default)({}, defaultOptions, userOption);
 	  var $this = (0, _jquery2.default)(this);
@@ -122,7 +122,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      addArrowClassName($this.next('.' + _style2.default.arrow).length, $this);
 	      $this.find('ul').slideDown();
 	    }
-	    //$(this).find('ul').slideToggle();
+	  });
+
+	  (0, _jquery2.default)(selector).click(function () {
+	    (0, _jquery2.default)('.' + _style2.default.sup).toggleClass(_style2.default.sup_small);
 	  });
 	};
 

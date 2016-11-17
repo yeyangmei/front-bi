@@ -8,7 +8,7 @@ import styles from './style.css';
 
 
 const defaultOptions = {
-  width: 220,
+  //width: 220,
 };
 
 function getClassName(ctx, width) {
@@ -27,7 +27,8 @@ function removeArrowClassName(opt, $this) {
     $this.find(`.${styles.arrow}`).removeClass(styles.arrow_blue);
 }
 
-$.fn.biNav = function (data, userOption = {}) {
+
+$.fn.biNav = function (data, selector, userOption = {}) {
   const option = assign({}, defaultOptions, userOption);
   const $this = $(this);
   const element = createDom(data);
@@ -58,6 +59,9 @@ $.fn.biNav = function (data, userOption = {}) {
         addArrowClassName($this.next(`.${styles.arrow}`).length, $this);
         $this.find('ul').slideDown();
       }
-      //$(this).find('ul').slideToggle();
-    })
+    });
+
+  $(selector).click(function() {
+    $(`.${styles.sup}`).toggleClass(styles.sup_small);
+  })
 };
