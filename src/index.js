@@ -39,12 +39,22 @@ $.fn.biNav = function (data, selector, userOption = {}) {
 
   $(`.${styles.sup_li}`)
     .hover(function enter() {
-        const $this1 = $(this);
-        $this1.addClass(getClassName($this1, option.width));
-      }, function leave() {
-        const $this1 = $(this);
-        $this1.removeClass(getClassName($this1, option.width));
+      console.log(this);
+      const $this1 = $(this);
+      console.log(this.getBoundingClientRect());
+      const position = this.getBoundingClientRect();
+      const height = option.bodyHeight - position.bottom;
+
+      if(position.top > height) {
+         $(this).find(`.${styles.sub}`).css('bottom','0');
+      }else{
+        $(this).find(`.${styles.sub}`).css('top','0');
       }
+      $this1.addClass(getClassName($this1, option.width));
+    }, function leave() {
+      const $this1 = $(this);
+      $this1.removeClass(getClassName($this1, option.width));
+    }
     );
 
   $(`.${styles.sub_li}`)
