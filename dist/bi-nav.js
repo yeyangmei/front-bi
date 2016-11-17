@@ -56,43 +56,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	exports.default = function (data) {
-	  var userOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-	  var option = (0, _objectAssign2.default)({}, defaultOptions, userOption);
-	  var $this = (0, _jquery2.default)(this);
-	  var element = (0, _dom2.default)(data);
-
-	  // console.log(element);
-
-	  $this.append(element);
-
-	  (0, _jquery2.default)('.' + _style2.default.sup_li).hover(function enter() {
-	    var $this1 = (0, _jquery2.default)(this);
-	    $this1.addClass(getClassName($this1, option.width));
-	  }, function leave() {
-	    var $this1 = (0, _jquery2.default)(this);
-	    $this1.removeClass(getClassName($this1, option.width));
-	  });
-
-	  (0, _jquery2.default)('.' + _style2.default.sub_li).click(function (e) {
-	    var $this = (0, _jquery2.default)(this);
-	    $this.siblings().find('ul').slideUp();
-	    if ($this.find('ul').css('display') == 'block') {
-	      removeArrowClassName($this.next('.' + _style2.default.arrow).length, $this);
-	      $this.find('ul').slideUp();
-	    } else {
-	      addArrowClassName($this.next('.' + _style2.default.arrow).length, $this);
-	      $this.find('ul').slideDown();
-	    }
-	    //$(this).find('ul').slideToggle();
-	  });
-	};
-
 	var _objectAssign = __webpack_require__(1);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
@@ -130,7 +93,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return opt > 0 ? $this.next('.' + _style2.default.arrow).removeClass(_style2.default.arrow_blue) : $this.find('.' + _style2.default.arrow).removeClass(_style2.default.arrow_blue);
 	}
 
-	;
+	_jquery2.default.fn.biNav = function (data) {
+	  var userOption = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  var option = (0, _objectAssign2.default)({}, defaultOptions, userOption);
+	  var $this = (0, _jquery2.default)(this);
+	  var element = (0, _dom2.default)(data);
+
+	  // console.log(element);
+
+	  $this.append(element);
+
+	  (0, _jquery2.default)('.' + _style2.default.sup_li).hover(function enter() {
+	    var $this1 = (0, _jquery2.default)(this);
+	    $this1.addClass(getClassName($this1, option.width));
+	  }, function leave() {
+	    var $this1 = (0, _jquery2.default)(this);
+	    $this1.removeClass(getClassName($this1, option.width));
+	  });
+
+	  (0, _jquery2.default)('.' + _style2.default.sub_li).click(function (e) {
+	    var $this = (0, _jquery2.default)(this);
+	    $this.siblings().find('ul').slideUp();
+	    if ($this.find('ul').css('display') == 'block') {
+	      removeArrowClassName($this.next('.' + _style2.default.arrow).length, $this);
+	      $this.find('ul').slideUp();
+	    } else {
+	      addArrowClassName($this.next('.' + _style2.default.arrow).length, $this);
+	      $this.find('ul').slideDown();
+	    }
+	    //$(this).find('ul').slideToggle();
+	  });
+	};
 
 /***/ },
 /* 1 */

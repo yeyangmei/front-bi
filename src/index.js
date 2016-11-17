@@ -27,7 +27,7 @@ function removeArrowClassName(opt, $this) {
     $this.find(`.${styles.arrow}`).removeClass(styles.arrow_blue);
 }
 
-export default function (data, userOption = {}) {
+$.fn.biNav = function (data, userOption = {}) {
   const option = assign({}, defaultOptions, userOption);
   const $this = $(this);
   const element = createDom(data);
