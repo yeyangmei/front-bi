@@ -76,7 +76,15 @@
     padding-left:35px;
     background-color:#1f2332;
 }
-:local(.subli_hover span) {
+:local(.sub_li a) {
+    color:#fff;
+    text-decoration:none;
+    display:block;
+}
+:local(.sub_li:hover), :local(.sub_li a:hover) {
+    color:#428bca;
+}
+:local(.sub_li:hover .arrow) {
     background-image:url(assets/plus-blue.png);
 }
 :local(.arrow) {
@@ -87,6 +95,7 @@
     width:12px;
     height: 12px;
     top:22px;
+    transition: all 0.3s ease;
 }
 
 :local(.sup_li_hover .sub), :local(.sup_li_small_hover .sub) {
@@ -100,14 +109,6 @@
     text-decoration:none;
 }
 
-:local(.sub_li a) {
-    color:#fff;
-    text-decoration:none;
-    display:block;
-}
-:local(.sub_li:hover), :local(.sub_li a:hover) {
-    color:#428bca;
-}
 
 :local(.three_li) {
     padding: 0;
@@ -141,4 +142,13 @@
 }
 :local(.three_li:first-child::before) {
     border-left:0;
+}
+:local(.arrow_blue) {
+    transform:rotate(225deg);
+    -ms-transform:rotate(225deg);
+    -moz-transform:rotate(225deg);
+    -webkit-transform:rotate(225deg);
+    -o-transform:rotate(225deg);
+    transition: all 0.3s ease;
+
 }

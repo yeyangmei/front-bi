@@ -15,12 +15,24 @@ function getClassName(ctx, width) {
   return  ctx.width() === width ? styles.sup_li_hover : styles.sup_li_small_hover;
 }
 
-$.fn.biNav = function (data, userOption = {}) {
+function addArrowClassName(opt, $this) {
+  return opt > 0 ?  $this.next(`.${styles.arrow}`).addClass(styles.arrow_blue)
+    :
+    $this.find(`.${styles.arrow}`).addClass(styles.arrow_blue);
+}
+
+function removeArrowClassName(opt, $this) {
+  return opt > 0 ?  $this.next(`.${styles.arrow}`).removeClass(styles.arrow_blue)
+    :
+    $this.find(`.${styles.arrow}`).removeClass(styles.arrow_blue);
+}
+
+export default function (data, userOption = {}) {
   const option = assign({}, defaultOptions, userOption);
   const $this = $(this);
   const element = createDom(data);
 
-  console.log(element);
+  // console.log(element);
 
   $this.append(element);
 
@@ -36,11 +48,16 @@ $.fn.biNav = function (data, userOption = {}) {
 
   $(`.${styles.sub_li}`)
     .click(function(e) {
-      const that = this;
-      console.log(this);
-      //if (e.tartet !== that) return;
-      $(this).siblings().find('ul').slideUp();
+      const $this = $(this);
+      $this.siblings().find('ul').slideUp();
+      if($this.find('ul').css('display') == 'block') {
+        removeArrowClassName($this.next(`.${styles.arrow}`).length, $this);
+        $this.find('ul').slideUp();
 
-      $(this).find('ul').slideToggle();
+      }else{
+        addArrowClassName($this.next(`.${styles.arrow}`).length, $this);
+        $this.find('ul').slideDown();
+      }
+      //$(this).find('ul').slideToggle();
     })
 };
