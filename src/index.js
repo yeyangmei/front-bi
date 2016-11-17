@@ -51,6 +51,7 @@ $.fn.biNav = function (data, selector, userOption = {}) {
     .click(function(e) {
       const $this = $(this);
       $this.siblings().find('ul').slideUp();
+      $this.parent().find(`.${styles.arrow}`).removeClass(styles.arrow_blue);
       if($this.find('ul').css('display') == 'block') {
         removeArrowClassName($this.next(`.${styles.arrow}`).length, $this);
         $this.find('ul').slideUp();
