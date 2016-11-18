@@ -1,7 +1,8 @@
 /**
  * Created by yeyangmei on 16/11/10.
  */
-const UgPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+// const UgPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index',
@@ -39,8 +40,8 @@ module.exports = {
     }
   ],
   plugins: [
-    new UgPlugin({
-      minimize: true,
+    new webpack.optimize.UglifyJsPlugin({
+      // beautify: true,
     })
   ]
 };

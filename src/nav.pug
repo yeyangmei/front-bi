@@ -4,7 +4,7 @@
 ul(class=styles.sup)
     each firstLevel, index in menu
         li(class=[styles.sup_li, styles.li])
-            em(class=styles.em): img(src= firstLevel.img_small class= sup_li_img)
+            em(class=styles.em): img(src= firstLevel.img_small class= styles.sup_li_img)
             span( class=[styles.firstlevel, styles.span])= index
             ul(class=styles.sub)
                 each subLevel in firstLevel.branch
@@ -15,6 +15,6 @@ ul(class=styles.sup)
                             ul(class=styles.three_sub)
                                 each threeLevel, index in subLevel.branch
                                     li(class=[styles.three_li, styles.li])
-                                        a(href= threeLevel.name)=threeLevel.title
+                                        a(href= threeLevel.name class=[styles.a, styles.threea])=threeLevel.title
                         else
-                            a(href= subLevel.name)=subLevel.title
+                            a(href= subLevel.name class=[styles.twoa, styles.a])=subLevel.title

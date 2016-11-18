@@ -7,6 +7,14 @@ const img = '<img src="' + data.common_img.icon.img_large + '" />';
 const imgb = '<img src="' + data.common_img.close.img_small + '" />';
 $('.header_nav').find('em').append(img);
 $('.header_nav').find('b').append(imgb);
+$('.header_nav').find('b').click(function(){
+  if($('.nav_left').width() === 60) {
+    $(this).find('img').attr('src',data.common_img.close.img_small);
+  }else{
+    $(this).find('img').attr('src',data.common_img.open.img_small);
+  }
+
+});
 $('.nav_left').biNav({
   menu: data.list,
 }, '.header_nav b', {
