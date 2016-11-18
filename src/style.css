@@ -1,5 +1,5 @@
 :local(.sup) {
-    width: 220px;
+    width: 164px;
     transition: all 0.1s ease;
 }
 
@@ -62,18 +62,20 @@
 }
 
 :local(.span) {
-    font-size:18px;
+    font-size:16px;
 }
 :local(.sub) {
     position: absolute;
-    left:220px;
+    left:164px;
     display: none;
     z-index: 1;
 }
 :local(.sub_li) {
-    width:220px;
-    padding-left:35px;
+    width:200px;
+    padding-left:30px;
     background-color:#1f2332;
+    line-height:40px;
+    font-size:14px;
 }
 :local(.a){
     color:#fff;
@@ -93,7 +95,7 @@
     display: inline-block;
     width:12px;
     height: 12px;
-    top:22px;
+    top:15px;
     transition: all 0.3s ease;
 }
 
@@ -112,12 +114,13 @@
 
 :local(.three_li) {
     padding: 0;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     font-size: 16px;
     padding-left: 20px;
     width: 165px;
     background-color:#1f2332;
+    font-size:12px;
 }
 :local(.threea){
     color:#fff;
@@ -127,7 +130,7 @@
 :local(.three_li:before) {
     content: '';
     width: 12px;
-    height: 40px;
+    height: 35px;
     border-left: 1px solid #428bca;
     border-bottom: 1px solid #428bca;
     display: inline-block;

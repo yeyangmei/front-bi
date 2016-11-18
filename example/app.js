@@ -18,6 +18,6 @@ $('.header_nav').find('b').click(function(){
 $('.nav_left').biNav({
   menu: data.list,
 }, '.header_nav b', {
-  width: 220,
+  width: 164,
   bodyHeight: 782,
 });
