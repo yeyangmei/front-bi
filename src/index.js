@@ -33,15 +33,14 @@ $.fn.biNav = function (data, selector, userOption = {}) {
   const $this = $(this);
   const element = createDom(data);
 
-  // console.log(element);
 
   $this.append(element);
 
   $(`.${styles.sup_li}`)
     .hover(function enter() {
-      console.log(this);
+
       const $this1 = $(this);
-      console.log(this.getBoundingClientRect());
+
       const position = this.getBoundingClientRect();
       const height = option.bodyHeight - position.bottom;
 
