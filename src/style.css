@@ -136,7 +136,7 @@
     display: inline-block;
     position: absolute;
     left: 0px;
-    top: -20px;
+    top: -16px;
 }
 :local(.three_li_first:before) {
     border-left:0
