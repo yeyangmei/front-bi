@@ -14,7 +14,7 @@
 :local(.li) {
     list-style: none;
     color: #fff;
-    line-height: 55px;
+    line-height: 50px;
     background-color: #2b2f3e;
     position: relative;
     white-space: nowrap;
@@ -62,7 +62,7 @@
 }
 
 :local(.span) {
-    font-size:16px;
+    font-size:14px;
 }
 :local(.sub) {
     position: absolute;
@@ -116,11 +116,10 @@
     padding: 0;
     height: 30px;
     line-height: 30px;
-    font-size: 16px;
+    font-size: 12px;
     padding-left: 20px;
     width: 165px;
     background-color:#1f2332;
-    font-size:12px;
 }
 :local(.threea){
     color:#fff;
@@ -136,7 +135,7 @@
     display: inline-block;
     position: absolute;
     left: 0px;
-    top: -20px;
+    top: -16px;
 }
 :local(.three_li_first:before) {
     border-left:0

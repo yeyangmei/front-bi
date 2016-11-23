@@ -41,7 +41,7 @@ module.exports = {
   ],
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      // beautify: true,
+      beautify: true,
     })
   ]
 };
